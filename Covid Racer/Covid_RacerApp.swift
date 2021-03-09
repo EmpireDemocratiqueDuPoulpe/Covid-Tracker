@@ -12,6 +12,7 @@ struct Covid_RacerApp: App {
     var body: some Scene {
         WindowGroup {
             TabsView()
+                .environmentObject(CovidApi())
         }
     }
 }
