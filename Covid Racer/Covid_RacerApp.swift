@@ -11,7 +11,7 @@ import SwiftUI
 struct Covid_RacerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabsView()
         }
     }
 }
