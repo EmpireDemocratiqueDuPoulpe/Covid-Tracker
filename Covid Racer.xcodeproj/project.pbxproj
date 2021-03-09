@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9562379225F7DA49009DAF27 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9562379125F7DA49009DAF27 /* Media.xcassets */; };
+		9562379525F7DDF7009DAF27 /* CountryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562379425F7DDF7009DAF27 /* CountryDetails.swift */; };
 		95D1AEE625F6799400A5DC81 /* Covid_RacerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D1AEE525F6799400A5DC81 /* Covid_RacerApp.swift */; };
 		95D1AEE825F6799400A5DC81 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D1AEE725F6799400A5DC81 /* Home.swift */; };
-		95D1AEEA25F679A100A5DC81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95D1AEE925F679A100A5DC81 /* Assets.xcassets */; };
 		95D1AEED25F679A100A5DC81 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95D1AEEC25F679A100A5DC81 /* Preview Assets.xcassets */; };
 		95F24EDF25F783EE00426468 /* CountriesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F24EDE25F783EE00426468 /* CountriesList.swift */; };
 		95F24EE225F7865600426468 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F24EE125F7865600426468 /* TabsView.swift */; };
@@ -18,10 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9562379125F7DA49009DAF27 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		9562379425F7DDF7009DAF27 /* CountryDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetails.swift; sourceTree = "<group>"; };
 		95D1AEE225F6799400A5DC81 /* Covid Racer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Covid Racer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D1AEE525F6799400A5DC81 /* Covid_RacerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid_RacerApp.swift; sourceTree = "<group>"; };
 		95D1AEE725F6799400A5DC81 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		95D1AEE925F679A100A5DC81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95D1AEEC25F679A100A5DC81 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		95D1AEEE25F679A100A5DC81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F24EDE25F783EE00426468 /* CountriesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesList.swift; sourceTree = "<group>"; };
@@ -63,9 +65,9 @@
 				95F24EE725F78D8B00426468 /* Data */,
 				95F24EE625F78D5D00426468 /* Views */,
 				95D1AEE525F6799400A5DC81 /* Covid_RacerApp.swift */,
-				95D1AEE925F679A100A5DC81 /* Assets.xcassets */,
 				95D1AEEE25F679A100A5DC81 /* Info.plist */,
 				95D1AEEB25F679A100A5DC81 /* Preview Content */,
+				9562379125F7DA49009DAF27 /* Media.xcassets */,
 			);
 			path = "Covid Racer";
 			sourceTree = "<group>";
@@ -84,6 +86,7 @@
 				95F24EE125F7865600426468 /* TabsView.swift */,
 				95D1AEE725F6799400A5DC81 /* Home.swift */,
 				95F24EDE25F783EE00426468 /* CountriesList.swift */,
+				9562379425F7DDF7009DAF27 /* CountryDetails.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -154,8 +157,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9562379225F7DA49009DAF27 /* Media.xcassets in Resources */,
 				95D1AEED25F679A100A5DC81 /* Preview Assets.xcassets in Resources */,
-				95D1AEEA25F679A100A5DC81 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +172,7 @@
 				95D1AEE825F6799400A5DC81 /* Home.swift in Sources */,
 				95D1AEE625F6799400A5DC81 /* Covid_RacerApp.swift in Sources */,
 				95F24EED25F78FB600426468 /* CovidAPI.swift in Sources */,
+				9562379525F7DDF7009DAF27 /* CountryDetails.swift in Sources */,
 				95F24EE225F7865600426468 /* TabsView.swift in Sources */,
 				95F24EDF25F783EE00426468 /* CountriesList.swift in Sources */,
 				95F24EE925F78DA100426468 /* Models.swift in Sources */,
