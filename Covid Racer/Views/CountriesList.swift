@@ -13,20 +13,20 @@ struct CountriesList: View {
     @EnvironmentObject var favorites: Favorites
     @State var showOnlyFavs = false
     
+    private var countries: [String : [Country]]? {
+        return self.showOnlyFavs
+            ? api.getOrderedCountriesWhere(idIsIn: self.favorites.getAll())
+            : api.apiResponse?.OrderedCountries
+    }
+    
     var body: some View {
-        if api.apiResponse?.Countries != nil {
+        if self.countries != nil {
             List {
                 ForEach(api.groupNames, id: \.self) { groupName in
-                    if let countries = api.apiResponse?.OrderedCountries[groupName] {
+                    if let countriesOfGroup = self.countries![groupName] {
                         Section(header: Text(groupName)) {
-                            ForEach(countries) { country in
-                                if self.showOnlyFavs {
-                                    if self.favorites.contains(country) {
-                                        CountryRow(country: country)
-                                    }
-                                } else {
-                                    CountryRow(country: country)
-                                }
+                            ForEach(countriesOfGroup) { country in
+                                CountryRow(country: country)
                             }
                         }
                     }

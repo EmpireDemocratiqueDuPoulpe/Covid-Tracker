@@ -46,6 +46,10 @@ class Favorites : ObservableObject {
     }
     
     // MARK: - GET
+    func getAll() -> Set<String> {
+        return self.countries
+    }
+    
     func contains(_ country: Country) -> Bool {
         return self.countries.contains(country.getId())
     }

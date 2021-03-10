@@ -63,6 +63,22 @@ class CovidApi : ObservableObject {
         self.apiResponse?.OrderedCountries = categories
     }
     
+    func getOrderedCountriesWhere(idIsIn idSet: Set<String>) -> [String: [Country]]? {
+        var categories: [String: [Country]] = [:]
+        
+        for groupName in self.groupNames {
+            if let countries = self.apiResponse?.getCountryStartingWith(groupName) {
+                let filteredCountries = countries.filter({ idSet.contains($0.getId()) })
+                
+                if !filteredCountries.isEmpty {
+                    categories[groupName] = filteredCountries
+                }
+            }
+        }
+        
+        return categories
+    }
+    
     func showError(_ error: Error?) {
         if let err = error {
             print(err)
