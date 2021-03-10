@@ -8,7 +8,12 @@
 import Foundation
 
 class WikiAPI : ObservableObject {
-    let language: String = "fr"
+    // Changing the lang will partially break the system. Example:
+    // https://en.wikipedia.org/w/api.php?&titles=belgium
+    // https://fr.wikipedia.org/w/api.php?&titles=belgium
+    // The first URL redirect to the country page.
+    // The second URL explain that "Belgium" is a word with a latin base.
+    let language: String = "en"
     let apiUrl = "https://%@.wikipedia.org/w/api.php?"
     let getPageExtract = "action=query&prop=extracts&exintro=1&explaintext=1&titles=%@&continue=&format=json&formatversion=2"
     

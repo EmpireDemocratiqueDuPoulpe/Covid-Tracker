@@ -13,6 +13,16 @@ struct CovidResponse : Codable {
     var Message: String?
     var Global: GlobalStats = GlobalStats()
     var Countries: [Country] = []
+    var OrderedCountries: [String: [Country]] = [:]
+    
+    private enum CodingKeys : String, CodingKey {
+        case ID, Message, Global, Countries
+    }
+    
+    func getCountryStartingWith(_ letter: String) -> [Country] {
+        let lowerLetter = letter.lowercased()
+        return self.Countries.filter({$0.Country?.first?.lowercased() == lowerLetter})
+    }
 }
 
 struct GlobalStats : Codable {

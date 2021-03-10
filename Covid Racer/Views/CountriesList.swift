@@ -13,8 +13,16 @@ struct CountriesList: View {
     
     var body: some View {
         if api.apiResponse?.Countries != nil {
-            List(api.apiResponse!.Countries) { country in
-                CountryRow(country: country)
+            List {
+                ForEach(api.groupNames, id: \.self) { groupName in
+                    if let countries = api.apiResponse?.OrderedCountries[groupName] {
+                        Section(header: Text(groupName)) {
+                            ForEach(countries) { country in
+                                CountryRow(country: country)
+                            }
+                        }
+                    }
+                }
             }
             .navigationTitle("Pays")
         }
