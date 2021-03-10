@@ -32,6 +32,7 @@ struct CountriesList: View {
 // MARK: - CountryRow
 struct CountryRow: View {
     var country: Country
+    @EnvironmentObject var favorites: Favorites
     
     var body: some View {
         NavigationLink(destination: CountryDetails(country: country)) {
@@ -41,6 +42,12 @@ struct CountryRow: View {
                 }
                 
                 Text(country.getNameAndCode())
+                
+                if self.favorites.contains(self.country) {
+                    Spacer()
+                    Image(systemName: "star.fill")
+                        .padding(.trailing)
+                }
             }
         }
     }

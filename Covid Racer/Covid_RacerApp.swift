@@ -13,6 +13,7 @@ struct Covid_RacerApp: App {
         WindowGroup {
             TabsView()
                 .environmentObject(CovidApi())
+                .environmentObject(Favorites())
         }
     }
 }

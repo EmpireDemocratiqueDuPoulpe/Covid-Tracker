@@ -11,6 +11,7 @@ import SwiftUI
 struct CountryDetails : View {
     var country: Country
     @ObservedObject var wikiApi = WikiAPI()
+    @EnvironmentObject var favorites: Favorites
     
     init(country: Country) {
         self.country = country
@@ -52,7 +53,7 @@ struct CountryDetails : View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    HStack {
+                    HStack(alignment: .center) {
                         Text(self.country.getName()).font(.headline)
                         
                         if let flag = self.country.getFlagImg() {
@@ -60,6 +61,15 @@ struct CountryDetails : View {
                                 .resizable()
                                 .frame(width: 32.0, height: 32.0)
                         }
+                    }
+                }
+                
+                ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
+                    Button(action: {
+                        self.favorites.toggle(self.country)
+                    }) {
+                        Image(systemName: (self.favorites.contains(self.country) ? "star.fill" : "star"))
+                            .padding(.trailing)
                     }
                 }
             }
