@@ -12,10 +12,12 @@ struct CountriesList: View {
     @EnvironmentObject var api: CovidApi
     
     var body: some View {
-        List(api.apiResponse!.Countries) { country in
-            CountryRow(country: country)
+        if api.apiResponse?.Countries != nil {
+            List(api.apiResponse!.Countries) { country in
+                CountryRow(country: country)
+            }
+            .navigationTitle("Pays")
         }
-        .navigationTitle("Pays")
     }
 }
 

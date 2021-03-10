@@ -10,18 +10,52 @@ import SwiftUI
 // MARK: - CountryDetails
 struct CountryDetails : View {
     var country: Country
+    @ObservedObject var wikiApi = WikiAPI()
+    
+    init(country: Country) {
+        self.country = country
+        self.wikiApi.getPageExtract(pageName: self.country.getName())
+    }
     
     var body: some View {
-        Text(country.getNameAndCode())
-            
+        ScrollView(.vertical) {
+            VStack(alignment: .center, spacing: 20.0) {
+                ReadMoreText(self.wikiApi.searchedPage?.getExtract() ?? "", lineLimit: 3)
+                    .font(.system(size: 16))
+                    .padding([.top, .leading, .trailing])
+                
+                CountryStat(
+                    title: "Nombre de cas",
+                    currentValue: self.country.TotalConfirmed,
+                    newValueFromToday: self.country.NewConfirmed
+                )
+                
+                CountryStat(
+                    title: "Nombre de soignés",
+                    currentValue: self.country.TotalRecovered,
+                    newValueFromToday: self.country.NewRecovered,
+                    newValueColor: Color(UIColor.systemGreen)
+                )
+                
+                CountryStat(
+                    title: "Nombre de morts",
+                    currentValue: self.country.TotalDeaths,
+                    newValueFromToday: self.country.NewDeaths
+                )
+                
+                Spacer()
+            }
+        }
+        .padding(.all)
+        
         // Custom toolbar
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     HStack {
-                        Text(country.getName()).font(.headline)
+                        Text(self.country.getName()).font(.headline)
                         
-                        if let flag = country.getFlagImg() {
+                        if let flag = self.country.getFlagImg() {
                             Image(uiImage: flag)
                                 .resizable()
                                 .frame(width: 32.0, height: 32.0)
@@ -29,6 +63,54 @@ struct CountryDetails : View {
                     }
                 }
             }
+    }
+}
+
+// MARK: - CountryStat
+struct CountryStat : View {
+    var title: String
+    var currentValue: Int?
+    var newValueFromToday: Int?
+    var newValueColor: Color
+    
+    init(title: String, currentValue: Int?, newValueFromToday: Int?, newValueColor: Color = Color(UIColor.systemRed)) {
+        self.title = title
+        self.currentValue = currentValue
+        self.newValueFromToday = newValueFromToday
+        self.newValueColor = newValueColor
+    }
+    
+    var body: some View {
+        HStack(alignment: .center) {
+            VStack(alignment: .leading) {
+                // Title
+                Text(self.title)
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(1)
+                    .padding(.bottom, 1.0)
+                
+                // Total value
+                Text("Total: \(self.currentValue ?? 0)")
+                    .padding(.leading)
+                
+                // Today value
+                HStack {
+                    Text("Depuis aujourd'hui: ")
+                    
+                    Text("\(self.newValueFromToday ?? 0)").foregroundColor(self.newValueColor)
+                    
+                    Image(systemName: "line.diagonal.arrow")
+                        .foregroundColor(self.newValueColor)
+                        .padding(.leading, -6.0)
+                }
+                .padding(.leading)
+                
+            }
+            .padding(.leading)
+            Spacer()
+        }
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  Models.swift
+//  CovidModels.swift
 //  Covid Racer
 //
 //  Created by Spoon Overlord on 09/03/2021.
