@@ -20,29 +20,31 @@ struct CountriesList: View {
     }
     
     var body: some View {
-        if self.countries != nil {
-            List {
-                ForEach(api.groupNames, id: \.self) { groupName in
-                    if let countriesOfGroup = self.countries![groupName], countriesOfGroup.count > 0 {
-                        Section(header: Text(groupName)) {
-                            ForEach(countriesOfGroup) { country in
-                                CountryRow(country: country)
+        VStack {
+            if self.countries != nil && (self.countries?.count ?? 0) > 0 {
+                List {
+                    ForEach(api.groupNames, id: \.self) { groupName in
+                        if let countriesOfGroup = self.countries![groupName], countriesOfGroup.count > 0 {
+                            Section(header: Text(groupName)) {
+                                ForEach(countriesOfGroup) { country in
+                                    CountryRow(country: country)
+                                }
                             }
                         }
                     }
                 }
+            } else {
+                Text("Aucun pays trouvé.")
+                    .font(.subheadline)
             }
-            .navigationTitle("Pays")
-            .toolbar {
-                ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
-                    Button(action: { self.showOnlyFavs.toggle() }) {
-                        Image(systemName: (self.showOnlyFavs ? "star.fill" : "star"))
-                    }
+        }
+        .navigationTitle("Pays")
+        .toolbar {
+            ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
+                Button(action: { self.showOnlyFavs.toggle() }) {
+                    Image(systemName: (self.showOnlyFavs ? "star.fill" : "star"))
                 }
             }
-        } else {
-            Text("Aucun pays trouvé.")
-                .font(.subheadline)
         }
     }
 }
