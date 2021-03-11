@@ -23,7 +23,7 @@ struct CountriesList: View {
         if self.countries != nil {
             List {
                 ForEach(api.groupNames, id: \.self) { groupName in
-                    if let countriesOfGroup = self.countries![groupName] {
+                    if let countriesOfGroup = self.countries![groupName], countriesOfGroup.count > 0 {
                         Section(header: Text(groupName)) {
                             ForEach(countriesOfGroup) { country in
                                 CountryRow(country: country)

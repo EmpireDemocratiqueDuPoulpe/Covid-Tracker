@@ -15,21 +15,21 @@ struct Home : View {
         VStack(alignment: .center) {
             StatBlock(
                 title: "Nombre de cas",
-                currentValue: api.apiResponse?.Global.TotalConfirmed,
-                newValueFromToday: api.apiResponse?.Global.NewConfirmed
+                currentValue: api.apiResponse?.Global.getConfirmed(),
+                newValueFromToday: api.apiResponse?.Global.getNewConfirmed()
             )
                 
             StatBlock(
                 title: "Nombre de soignés",
-                currentValue: api.apiResponse?.Global.TotalRecovered,
-                newValueFromToday: api.apiResponse?.Global.NewRecovered,
+                currentValue: api.apiResponse?.Global.getRecovered(),
+                newValueFromToday: api.apiResponse?.Global.getNewRecovered(),
                 newValueColor: Color(UIColor.systemGreen)
             )
                 
             StatBlock(
                 title: "Nombre de morts",
-                currentValue: api.apiResponse?.Global.TotalDeaths,
-                newValueFromToday: api.apiResponse?.Global.NewDeaths
+                currentValue: api.apiResponse?.Global.getDeaths(),
+                newValueFromToday: api.apiResponse?.Global.getNewDeaths()
             )
             
             Spacer()

@@ -65,11 +65,21 @@ struct CountryDetails : View {
                 }
                 
                 ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
-                    Button(action: {
-                        self.favorites.toggle(self.country)
-                    }) {
-                        Image(systemName: (self.favorites.contains(self.country) ? "star.fill" : "star"))
-                            .padding(.trailing)
+                    HStack(alignment: .center, spacing: 5.0) {
+                        Button(action: {
+                            ShareableStats(
+                                subject: "Statistiques du COVID en \(self.country.getName())",
+                                stats: self.country
+                            ).share()
+                        }) {
+                            Image(systemName: "square.and.arrow.up")
+                        }
+                        
+                        Button(action: {
+                            self.favorites.toggle(self.country)
+                        }) {
+                            Image(systemName: (self.favorites.contains(self.country) ? "star.fill" : "star"))
+                        }
                     }
                 }
             }

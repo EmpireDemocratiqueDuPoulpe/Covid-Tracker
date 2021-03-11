@@ -8,6 +8,25 @@
 import Foundation
 import SwiftUI
 
+protocol CovidStats {
+
+    var NewConfirmed: Int? { get set }
+    var TotalConfirmed: Int? { get set }
+    var NewDeaths: Int? { get set }
+    var TotalDeaths: Int? { get set }
+    var NewRecovered: Int? { get set }
+    var TotalRecovered: Int? { get set }
+    var Date: String? { get set }
+    
+    func getNewConfirmed() -> Int
+    func getConfirmed() -> Int
+    func getNewDeaths() -> Int
+    func getDeaths() -> Int
+    func getNewRecovered() -> Int
+    func getRecovered() -> Int
+    func getUpdateDate() -> String
+}
+
 struct CovidResponse : Codable {
     var ID: String?
     var Message: String?
@@ -25,7 +44,7 @@ struct CovidResponse : Codable {
     }
 }
 
-struct GlobalStats : Codable {
+struct GlobalStats : Codable, CovidStats {
     var NewConfirmed: Int?
     var TotalConfirmed: Int?
     var NewDeaths: Int?
@@ -33,9 +52,17 @@ struct GlobalStats : Codable {
     var NewRecovered: Int?
     var TotalRecovered: Int?
     var Date: String?
+    
+    func getNewConfirmed() -> Int       { return self.NewConfirmed ?? 0 }
+    func getConfirmed() -> Int          { return self.TotalConfirmed ?? 0 }
+    func getNewDeaths() -> Int          { return self.NewDeaths ?? 0 }
+    func getDeaths() -> Int             { return self.TotalDeaths ?? 0 }
+    func getNewRecovered() -> Int       { return self.NewRecovered ?? 0 }
+    func getRecovered() -> Int          { return self.TotalRecovered ?? 0 }
+    func getUpdateDate() -> String      { return self.Date ?? "" }
 }
 
-struct Country : Codable, Identifiable {
+struct Country : Codable, Identifiable, CovidStats {
     // To be Identifiable, Country required an "id". "ID" doesn't match case
     // so this variable redirect every get/set to the real ID.
     var id: String {
@@ -69,18 +96,6 @@ struct Country : Codable, Identifiable {
     func getNewRecovered() -> Int       { return self.NewRecovered ?? 0 }
     func getRecovered() -> Int          { return self.TotalRecovered ?? 0 }
     func getUpdateDate() -> String      { return self.Date ?? "" }
-    
-    func getFlagEmoji() -> String {
-        if (self.CountryCode == nil) { return "" };
-        
-        return self.CountryCode!
-            .uppercased()
-            .unicodeScalars
-            .map({ 127397 + $0.value })
-            .compactMap(UnicodeScalar.init)
-            .map(String.init)
-            .joined()
-    }
     
     func getFlagImg() -> UIImage? {
         return self.CountryCode != nil
