@@ -32,6 +32,18 @@ struct Home : View {
                 newValueFromToday: api.apiResponse?.Global.getNewDeaths()
             )
             
+            if let updateDate = api.apiResponse?.Global.getUpdateDate() {
+                HStack {
+                    Spacer()
+                    
+                    Text("Dernière mise à jour: \(updateDate)")
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                        .multilineTextAlignment(.trailing)
+                        .padding(.trailing)
+                }
+            }
+            
             Spacer()
         }
         .navigationTitle("Accueil")
@@ -64,10 +76,12 @@ struct StatBlock : View {
             HStack {
                 Text("\(self.currentValue ?? 0)")
                 
-                Text("+ \(self.newValueFromToday ?? 0)")
-                    .font(.system(size: 12))
-                    .fontWeight(.bold)
-                    .foregroundColor(self.newValueColor)
+                if self.newValueFromToday != nil && self.newValueFromToday! != 0 {
+                    Text("+ \(self.newValueFromToday!)")
+                        .font(.system(size: 12))
+                        .fontWeight(.bold)
+                        .foregroundColor(self.newValueColor)
+                }
             }
         }
         .padding(.all)

@@ -44,6 +44,18 @@ struct CountryDetails : View {
                     newValueFromToday: self.country.NewDeaths
                 )
                 
+                if let updateDate = country.getUpdateDate() {
+                    HStack {
+                        Text("Dernière mise à jour: \(updateDate)")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                            .multilineTextAlignment(.trailing)
+                            .padding(.leading, 30.0)
+                        
+                        Spacer()
+                    }
+                }
+                
                 Spacer()
             }
         }
@@ -121,9 +133,11 @@ struct CountryStat : View {
                     
                     Text("\(self.newValueFromToday ?? 0)").foregroundColor(self.newValueColor)
                     
-                    Image(systemName: "line.diagonal.arrow")
-                        .foregroundColor(self.newValueColor)
-                        .padding(.leading, -6.0)
+                    if self.newValueFromToday != nil && self.newValueFromToday! != 0 {
+                        Image(systemName: "line.diagonal.arrow")
+                            .foregroundColor(self.newValueColor)
+                            .padding(.leading, -6.0)
+                    }
                 }
                 .padding(.leading)
                 
@@ -151,6 +165,6 @@ struct CountryDetails_Previews: PreviewProvider {
                 TotalRecovered:12,
                 Date: "01/01/01"
             )
-        )
+        ).environmentObject(Favorites())
     }
 }

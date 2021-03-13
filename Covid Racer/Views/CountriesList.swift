@@ -12,6 +12,7 @@ struct CountriesList: View {
     @EnvironmentObject var api: CovidApi
     @EnvironmentObject var favorites: Favorites
     @State var showOnlyFavs = false
+    @State(initialValue: "") var search: String
     
     private var countries: [String : [Country]]? {
         return self.showOnlyFavs
@@ -22,9 +23,12 @@ struct CountriesList: View {
     var body: some View {
         VStack {
             if self.countries != nil && (self.countries?.count ?? 0) > 0 {
+                SearchBar(content: $search)
+                    .padding(.top)
+                
                 List {
                     ForEach(api.groupNames, id: \.self) { groupName in
-                        if let countriesOfGroup = self.countries![groupName], countriesOfGroup.count > 0 {
+                        if let countriesOfGroup = self.countries![groupName]?.filter({ self.search.isEmpty ? true : $0.getName().contains(self.search) }), countriesOfGroup.count > 0 {
                             Section(header: Text(groupName)) {
                                 ForEach(countriesOfGroup) { country in
                                     CountryRow(country: country)

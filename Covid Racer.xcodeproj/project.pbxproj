@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		953C6A2E25F95F520045C453 /* ReadMoreText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C6A2D25F95F520045C453 /* ReadMoreText.swift */; };
 		9543559425F97B1200DB05B1 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543559325F97B1200DB05B1 /* Favorites.swift */; };
+		9550951825FD14800029D61B /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9550951725FD14800029D61B /* SearchBar.swift */; };
 		9562379225F7DA49009DAF27 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9562379125F7DA49009DAF27 /* Media.xcassets */; };
 		9562379525F7DDF7009DAF27 /* CountryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562379425F7DDF7009DAF27 /* CountryDetails.swift */; };
 		9566D4BB25F94F7B00F65A32 /* WikiModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566D4BA25F94F7B00F65A32 /* WikiModels.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		953C6A2D25F95F520045C453 /* ReadMoreText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMoreText.swift; sourceTree = "<group>"; };
 		9543559325F97B1200DB05B1 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
+		9550951725FD14800029D61B /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		9562379125F7DA49009DAF27 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		9562379425F7DDF7009DAF27 /* CountryDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetails.swift; sourceTree = "<group>"; };
 		9566D4BA25F94F7B00F65A32 /* WikiModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiModels.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				95F24EDE25F783EE00426468 /* CountriesList.swift */,
 				9562379425F7DDF7009DAF27 /* CountryDetails.swift */,
 				953C6A2D25F95F520045C453 /* ReadMoreText.swift */,
+				9550951725FD14800029D61B /* SearchBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9550951825FD14800029D61B /* SearchBar.swift in Sources */,
 				95D1AEE825F6799400A5DC81 /* Home.swift in Sources */,
 				953C6A2E25F95F520045C453 /* ReadMoreText.swift in Sources */,
 				95D1AEE625F6799400A5DC81 /* Covid_RacerApp.swift in Sources */,
