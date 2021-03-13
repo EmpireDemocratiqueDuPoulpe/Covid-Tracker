@@ -23,6 +23,8 @@ class CovidApi : ObservableObject {
         guard let serviceUrl = URL(string: apiUrl + apiSummaryPage)
         else { return }
         
+        self.apiResponse = nil
+        
         // Request build
         var request = URLRequest(url: serviceUrl)
         request.httpMethod = "GET"
@@ -46,9 +48,6 @@ class CovidApi : ObservableObject {
             }
         }.resume()
     }
-    
-    // MARK: - Functions that return api response data
-    func getConfirmed() -> Int { return apiResponse?.Global.TotalConfirmed ?? 0 }
     
     // MARK: - Others functions
     func getOrderedCountries() {

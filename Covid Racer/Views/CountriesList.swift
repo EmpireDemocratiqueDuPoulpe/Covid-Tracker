@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUIRefresh
 
 // MARK: - CountriesList
 struct CountriesList: View {
@@ -13,6 +14,7 @@ struct CountriesList: View {
     @EnvironmentObject var favorites: Favorites
     @State var showOnlyFavs = false
     @State(initialValue: "") var search: String
+    @State var isRefreshing = false
     
     private var countries: [String : [Country]]? {
         return self.showOnlyFavs
@@ -22,28 +24,40 @@ struct CountriesList: View {
     
     var body: some View {
         VStack {
-            if self.countries != nil && (self.countries?.count ?? 0) > 0 {
-                SearchBar(content: $search)
-                    .padding(.top)
-                
-                List {
+            SearchBar(content: $search)
+            
+            List {
+                if self.countries != nil && (self.countries?.count ?? 0) > 0 {
+                    
                     ForEach(api.groupNames, id: \.self) { groupName in
-                        if let countriesOfGroup = self.countries![groupName]?.filter({ self.search.isEmpty ? true : $0.getName().contains(self.search) }), countriesOfGroup.count > 0 {
+                        if let countriesOfGroup = self.countries![groupName]?.filter({ self.search.isEmpty ? true : $0.getNameAndCode().lowercased().contains(self.search.lowercased()) }), countriesOfGroup.count > 0 {
                             Section(header: Text(groupName)) {
                                 ForEach(countriesOfGroup) { country in
                                     CountryRow(country: country)
                                 }
                             }
                         }
-                    }
+                    }.onAppear() { self.isRefreshing = false }
+                } else if self.isRefreshing {
+                    Text("Chargement...")
+                        .font(.subheadline)
+                } else {
+                    Text("Aucun pays trouvé.")
+                        .font(.subheadline)
                 }
-            } else {
-                Text("Aucun pays trouvé.")
-                    .font(.subheadline)
+            }.pullToRefresh(isShowing: self.$isRefreshing) {
+                DispatchQueue.main.async {
+                    self.api.getSummary()
+                }
             }
         }
-        .navigationTitle("Pays")
         .toolbar {
+            ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
+                Text("Pays")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+            }
+            
             ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
                 Button(action: { self.showOnlyFavs.toggle() }) {
                     Image(systemName: (self.showOnlyFavs ? "star.fill" : "star"))
