@@ -1,6 +1,6 @@
 //
 //  CovidModels.swift
-//  Covid Racer
+//  Covid Tracker
 //
 //  Created by Spoon Overlord on 09/03/2021.
 //
@@ -25,6 +25,7 @@ protocol CovidStats {
     func getNewRecovered() -> Int
     func getRecovered() -> Int
     func getUpdateDate() -> String
+    func ConvertDate() -> String
 }
 
 struct CovidResponse : Codable {
@@ -59,7 +60,21 @@ struct GlobalStats : Codable, CovidStats {
     func getDeaths() -> Int             { return self.TotalDeaths ?? 0 }
     func getNewRecovered() -> Int       { return self.NewRecovered ?? 0 }
     func getRecovered() -> Int          { return self.TotalRecovered ?? 0 }
-    func getUpdateDate() -> String      { return self.Date ?? "" }
+    func getUpdateDate() -> String      { return self.ConvertDate() }
+    
+    internal func ConvertDate() -> String {
+        let inputDateFormat = DateFormatter()
+        inputDateFormat.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        
+        let outputDateFormat = DateFormatter()
+        outputDateFormat.dateFormat = "dd/MM/yyyy - HH:mm:ss"
+        
+        if let date = inputDateFormat.date(from: self.Date ?? "") {
+            return outputDateFormat.string(from: date)
+        } else {
+            return ""
+        }
+    }
 }
 
 struct Country : Codable, Identifiable, CovidStats {
@@ -95,7 +110,21 @@ struct Country : Codable, Identifiable, CovidStats {
     func getDeaths() -> Int             { return self.TotalDeaths ?? 0 }
     func getNewRecovered() -> Int       { return self.NewRecovered ?? 0 }
     func getRecovered() -> Int          { return self.TotalRecovered ?? 0 }
-    func getUpdateDate() -> String      { return self.Date ?? "" }
+    func getUpdateDate() -> String      { return self.ConvertDate() }
+    
+    internal func ConvertDate() -> String {
+        let inputDateFormat = DateFormatter()
+        inputDateFormat.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        
+        let outputDateFormat = DateFormatter()
+        outputDateFormat.dateFormat = "dd/MM/yyyy - HH:mm:ss"
+        
+        if let date = inputDateFormat.date(from: self.Date ?? "") {
+            return outputDateFormat.string(from: date)
+        } else {
+            return ""
+        }
+    }
     
     func getFlagImg() -> UIImage? {
         return self.CountryCode != nil

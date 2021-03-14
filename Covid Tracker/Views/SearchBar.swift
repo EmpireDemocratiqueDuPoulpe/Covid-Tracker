@@ -1,6 +1,6 @@
 //
 //  SearchBar.swift
-//  Covid Racer
+//  Covid Tracker
 //
 //  Created by Spoon Overlord on 13/03/2021.
 //

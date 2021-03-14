@@ -1,6 +1,6 @@
 //
 //  CountriesList.swift
-//  Covid Racer
+//  Covid Tracker
 //
 //  Created by Spoon Overlord on 09/03/2021.
 //
@@ -38,12 +38,18 @@ struct CountriesList: View {
                             }
                         }
                     }.onAppear() { self.isRefreshing = false }
-                } else if self.isRefreshing {
-                    Text("Chargement...")
-                        .font(.subheadline)
                 } else {
-                    Text("Aucun pays trouvé.")
-                        .font(.subheadline)
+                    if !self.api.querySuccess {
+                        Text("Erreur pendant la récupération des données.")
+                            .font(.subheadline)
+                            .onAppear() { self.isRefreshing = false }
+                    } else if self.isRefreshing {
+                        Text("Chargement...")
+                            .font(.subheadline)
+                    } else {
+                        Text("Aucun pays trouvé.")
+                            .font(.subheadline)
+                    }
                 }
             }.pullToRefresh(isShowing: self.$isRefreshing) {
                 DispatchQueue.main.async {
