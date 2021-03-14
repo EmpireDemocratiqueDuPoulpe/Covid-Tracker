@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,7 +14,7 @@
 		9562379525F7DDF7009DAF27 /* CountryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562379425F7DDF7009DAF27 /* CountryDetails.swift */; };
 		9566D4BB25F94F7B00F65A32 /* WikiModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566D4BA25F94F7B00F65A32 /* WikiModels.swift */; };
 		9566D4BE25F9516500F65A32 /* WikiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566D4BD25F9516500F65A32 /* WikiAPI.swift */; };
-		95D1AEE625F6799400A5DC81 /* Covid_RacerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D1AEE525F6799400A5DC81 /* Covid_RacerApp.swift */; };
+		95D1AEE625F6799400A5DC81 /* Covid_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D1AEE525F6799400A5DC81 /* Covid_TrackerApp.swift */; };
 		95D1AEE825F6799400A5DC81 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D1AEE725F6799400A5DC81 /* Home.swift */; };
 		95D1AEED25F679A100A5DC81 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95D1AEEC25F679A100A5DC81 /* Preview Assets.xcassets */; };
 		95D5A69D25FA972800D51617 /* ShareableStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5A69C25FA972800D51617 /* ShareableStats.swift */; };
@@ -34,8 +34,8 @@
 		9562379425F7DDF7009DAF27 /* CountryDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetails.swift; sourceTree = "<group>"; };
 		9566D4BA25F94F7B00F65A32 /* WikiModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiModels.swift; sourceTree = "<group>"; };
 		9566D4BD25F9516500F65A32 /* WikiAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiAPI.swift; sourceTree = "<group>"; };
-		95D1AEE225F6799400A5DC81 /* Covid Racer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Covid Racer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		95D1AEE525F6799400A5DC81 /* Covid_RacerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid_RacerApp.swift; sourceTree = "<group>"; };
+		95D1AEE225F6799400A5DC81 /* Covid Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Covid Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		95D1AEE525F6799400A5DC81 /* Covid_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid_TrackerApp.swift; sourceTree = "<group>"; };
 		95D1AEE725F6799400A5DC81 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		95D1AEEC25F679A100A5DC81 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		95D1AEEE25F679A100A5DC81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,14 +74,13 @@
 				0F531A17EA9C38FCB892E090 /* Pods-Covid Racer.debug.xcconfig */,
 				FD3A54A88F1C7E3A4F7D3D69 /* Pods-Covid Racer.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		95D1AED925F6799300A5DC81 = {
 			isa = PBXGroup;
 			children = (
-				95D1AEE425F6799400A5DC81 /* Covid Racer */,
+				95D1AEE425F6799400A5DC81 /* Covid Tracker */,
 				95D1AEE325F6799400A5DC81 /* Products */,
 				36B11C981F790828F09C784B /* Pods */,
 				163526EAD45A0D8334B98AFF /* Frameworks */,
@@ -91,22 +90,22 @@
 		95D1AEE325F6799400A5DC81 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				95D1AEE225F6799400A5DC81 /* Covid Racer.app */,
+				95D1AEE225F6799400A5DC81 /* Covid Tracker.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		95D1AEE425F6799400A5DC81 /* Covid Racer */ = {
+		95D1AEE425F6799400A5DC81 /* Covid Tracker */ = {
 			isa = PBXGroup;
 			children = (
 				95F24EE725F78D8B00426468 /* Data */,
 				95F24EE625F78D5D00426468 /* Views */,
-				95D1AEE525F6799400A5DC81 /* Covid_RacerApp.swift */,
+				95D1AEE525F6799400A5DC81 /* Covid_TrackerApp.swift */,
 				95D1AEEE25F679A100A5DC81 /* Info.plist */,
 				95D1AEEB25F679A100A5DC81 /* Preview Content */,
 				9562379125F7DA49009DAF27 /* Media.xcassets */,
 			);
-			path = "Covid Racer";
+			path = "Covid Tracker";
 			sourceTree = "<group>";
 		};
 		95D1AEEB25F679A100A5DC81 /* Preview Content */ = {
@@ -146,9 +145,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		95D1AEE125F6799400A5DC81 /* Covid Racer */ = {
+		95D1AEE125F6799400A5DC81 /* Covid Tracker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95D1AEF125F679A100A5DC81 /* Build configuration list for PBXNativeTarget "Covid Racer" */;
+			buildConfigurationList = 95D1AEF125F679A100A5DC81 /* Build configuration list for PBXNativeTarget "Covid Tracker" */;
 			buildPhases = (
 				982CC1577D0CBF9407760C76 /* [CP] Check Pods Manifest.lock */,
 				95D1AEDE25F6799400A5DC81 /* Sources */,
@@ -160,9 +159,9 @@
 			);
 			dependencies = (
 			);
-			name = "Covid Racer";
+			name = "Covid Tracker";
 			productName = "Covid Racer";
-			productReference = 95D1AEE225F6799400A5DC81 /* Covid Racer.app */;
+			productReference = 95D1AEE225F6799400A5DC81 /* Covid Tracker.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -179,7 +178,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 95D1AEDD25F6799400A5DC81 /* Build configuration list for PBXProject "Covid Racer" */;
+			buildConfigurationList = 95D1AEDD25F6799400A5DC81 /* Build configuration list for PBXProject "Covid Tracker" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -192,7 +191,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				95D1AEE125F6799400A5DC81 /* Covid Racer */,
+				95D1AEE125F6799400A5DC81 /* Covid Tracker */,
 			);
 		};
 /* End PBXProject section */
@@ -259,7 +258,7 @@
 				9550951825FD14800029D61B /* SearchBar.swift in Sources */,
 				95D1AEE825F6799400A5DC81 /* Home.swift in Sources */,
 				953C6A2E25F95F520045C453 /* ReadMoreText.swift in Sources */,
-				95D1AEE625F6799400A5DC81 /* Covid_RacerApp.swift in Sources */,
+				95D1AEE625F6799400A5DC81 /* Covid_TrackerApp.swift in Sources */,
 				95F24EED25F78FB600426468 /* CovidAPI.swift in Sources */,
 				9566D4BB25F94F7B00F65A32 /* WikiModels.swift in Sources */,
 				9543559425F97B1200DB05B1 /* Favorites.swift in Sources */,
@@ -398,15 +397,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Covid Racer/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Covid Tracker/Preview Content\"";
+				DEVELOPMENT_TEAM = PRQULXTWN8;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Covid Racer/Info.plist";
+				INFOPLIST_FILE = "Covid Tracker/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "virus.covid.Covid-Racer";
+				PRODUCT_BUNDLE_IDENTIFIER = "virus.covid.Covid-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -420,15 +420,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Covid Racer/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Covid Tracker/Preview Content\"";
+				DEVELOPMENT_TEAM = PRQULXTWN8;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Covid Racer/Info.plist";
+				INFOPLIST_FILE = "Covid Tracker/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "virus.covid.Covid-Racer";
+				PRODUCT_BUNDLE_IDENTIFIER = "virus.covid.Covid-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -438,7 +439,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		95D1AEDD25F6799400A5DC81 /* Build configuration list for PBXProject "Covid Racer" */ = {
+		95D1AEDD25F6799400A5DC81 /* Build configuration list for PBXProject "Covid Tracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95D1AEEF25F679A100A5DC81 /* Debug */,
@@ -447,7 +448,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		95D1AEF125F679A100A5DC81 /* Build configuration list for PBXNativeTarget "Covid Racer" */ = {
+		95D1AEF125F679A100A5DC81 /* Build configuration list for PBXNativeTarget "Covid Tracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95D1AEF225F679A100A5DC81 /* Debug */,

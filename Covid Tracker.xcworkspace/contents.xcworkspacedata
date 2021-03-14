@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Covid Racer.xcodeproj">
+      location = "group:/Users/spoonoverlord/XCode_Projects/Covid-Tracker/Covid Tracker.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
