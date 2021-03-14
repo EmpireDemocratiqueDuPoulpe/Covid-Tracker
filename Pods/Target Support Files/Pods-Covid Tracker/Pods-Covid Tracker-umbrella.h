@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Covid_RacerVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Covid_RacerVersionString[];
+FOUNDATION_EXPORT double Pods_Covid_TrackerVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Covid_TrackerVersionString[];
 
