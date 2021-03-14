@@ -3,6 +3,8 @@
 # Covid Tracker
 Covid Tracker vous permet de suivre la progression de la pandémie globalement ou par pays. Les statistiques sont régulièrement mis à jour et proviennent de [cette API](https://api.covid19api.com/summary).
 
+> L'API est souvent hors-ligne. Un système de cache a été mis en place dans l'application.
+
 ## Bugs connus
 - **[Barre de recherche] -** La barre de recherche est bizarrement placée. La toolbar semble trop grande.
 - **[Rechargement] -** L'application peut parfois rester coincée pendant le rechargement des données.
