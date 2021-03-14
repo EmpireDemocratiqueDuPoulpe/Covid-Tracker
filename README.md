@@ -1,7 +1,7 @@
 ![](https://github.com/EmpireDemocratiqueDuPoulpe/Covid-Racer/blob/main/Covid%20Tracker/Media.xcassets/AppIcon.appiconset/120_120.png)
 
 # Covid Tracker
-Covid Tracker vous permet de suivre la progression de la pandémie globalement ou par pays. Les statistiques sont régulièrement mis à jour et ils proviennent de [cette API](https://api.covid19api.com/summary).
+Covid Tracker vous permet de suivre la progression de la pandémie globalement ou par pays. Les statistiques sont régulièrement mis à jour et proviennent de [cette API](https://api.covid19api.com/summary).
 
 ## Bugs connus
 - **[Barre de recherche] -** La barre de recherche est bizarrement placée. La toolbar semble trop grande.
