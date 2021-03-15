@@ -22,7 +22,7 @@ struct SearchBar : View {
         
         HStack {
             // Search bar
-            TextField("Rechercher...", text: binding)
+            TextField(NSLocalizedString("Search...", comment: ""), text: binding)
                 .padding(.vertical, 6.0)
                 .padding(.horizontal, 25.0)
                 .background(Color(.systemGray6))
@@ -57,7 +57,7 @@ struct SearchBar : View {
                     self.content = ""
                     self.isInUse = false;
                 }) {
-                    Text("Annuler")
+                    Text(NSLocalizedString("Cancel", comment: ""))
                         .padding(.trailing)
                         .transition(.move(edge: .trailing))
                         .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)

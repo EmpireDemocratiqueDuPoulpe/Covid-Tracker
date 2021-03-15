@@ -14,13 +14,13 @@ struct TabsView: View {
             NavigationView {
                 Home()
             }.tabItem {
-                Label("Accueil", systemImage: "house.fill")
+                Label(NSLocalizedString("Home", comment: ""), systemImage: "house.fill")
             }
             
             NavigationView {
                 CountriesList()
             }.tabItem {
-                Label("Pays", systemImage: "mappin.and.ellipse")
+                Label(NSLocalizedString("Country", comment: ""), systemImage: "mappin.and.ellipse")
             }
         }
     }

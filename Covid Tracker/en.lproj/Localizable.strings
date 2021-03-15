@@ -1,0 +1,641 @@
+/* 
+  Localizable.strings
+  Covid Tracker
+
+  Created by Spoon Overlord on 14/03/2021.
+  
+*/
+
+/* No comment provided by engineer. */
+"Home" = "Home";
+
+/* No comment provided by engineer. */
+"Country" = "Country";
+
+/* No comment provided by engineer. */
+"Cases" = "Cases";
+
+/* No comment provided by engineer. */
+"Recovered" = "Recovered";
+
+/* No comment provided by engineer. */
+"Deaths" = "Deaths";
+
+/* No comment provided by engineer. */
+"Since today: " = "Since today: ";
+
+/* No comment provided by engineer. */
+"Total: %@" = "Total: %@";
+
+/* No comment provided by engineer. */
+"+ %@" = "+ %@";
+
+/* No comment provided by engineer. */
+"Last update: %@" = "Last update: %@";
+
+/* No comment provided by engineer. */
+"Using local data" = "Using local data";
+
+/* No comment provided by engineer. */
+"Loading..." = "Loading...";
+
+/* No comment provided by engineer. */
+"An error occured while fetching data." = "An error occured while fetching data.";
+
+/* No comment provided by engineer. */
+"No country found." = "No country found.";
+
+/* No comment provided by engineer. */
+"Search..." = "Search...";
+
+/* No comment provided by engineer. */
+"Cancel" = "Cancel";
+
+/* No comment provided by engineer. */
+"COVID stats in %@" = "COVID stats in %@";
+
+/* No comment provided by engineer. */
+"Read less" = "Read less";
+
+/* No comment provided by engineer. */
+"Read more" = "Read more";
+
+/*******************************************
+  WIKI API
+ *******************************************/
+
+"language" = "en";
+
+/*******************************************
+  COUNTRIES
+ *******************************************/
+
+/* No comment provided by engineer. */
+"AF" = "Afghanistan";
+
+/* No comment provided by engineer. */
+"AL" = "Albania";
+
+/* No comment provided by engineer. */
+"DZ" = "Algeria";
+
+/* No comment provided by engineer. */
+"AD" = "Andorra";
+
+/* No comment provided by engineer. */
+"AO" = "Angola";
+
+/* No comment provided by engineer. */
+"AG" = "Antigua and Barbuda";
+
+/* No comment provided by engineer. */
+"AR" = "Argentina";
+
+/* No comment provided by engineer. */
+"AM" = "Armenia";
+
+/* No comment provided by engineer. */
+"AU" = "Australia";
+
+/* No comment provided by engineer. */
+"AT" = "Austria";
+
+/* No comment provided by engineer. */
+"AZ" = "Azerbaijan";
+
+/* No comment provided by engineer. */
+"BS" = "Bahamas";
+
+/* No comment provided by engineer. */
+"BH" = "Bahrain";
+
+/* No comment provided by engineer. */
+"BD" = "Bangladesh";
+
+/* No comment provided by engineer. */
+"BB" = "Barbados";
+
+/* No comment provided by engineer. */
+"BY" = "Belarus";
+
+/* No comment provided by engineer. */
+"BE" = "Belgium";
+
+/* No comment provided by engineer. */
+"BZ" = "Belize";
+
+/* No comment provided by engineer. */
+"BJ" = "Benin";
+
+/* No comment provided by engineer. */
+"BT" = "Bhutan";
+
+/* No comment provided by engineer. */
+"BO" = "Bolivia";
+
+/* No comment provided by engineer. */
+"BA" = "Bosnia and Herzegovina";
+
+/* No comment provided by engineer. */
+"BW" = "Botswana";
+
+/* No comment provided by engineer. */
+"BR" = "Brazil";
+
+/* No comment provided by engineer. */
+"BN" = "Brunei";
+
+/* No comment provided by engineer. */
+"BG" = "Bulgaria";
+
+/* No comment provided by engineer. */
+"BF" = "Burkina Faso";
+
+/* No comment provided by engineer. */
+"BI" = "Burundi";
+
+/* No comment provided by engineer. */
+"KH" = "Cambodia";
+
+/* No comment provided by engineer. */
+"CM" = "Cameroon";
+
+/* No comment provided by engineer. */
+"CA" = "Canada";
+
+/* No comment provided by engineer. */
+"CV" = "Cape Verde";
+
+/* No comment provided by engineer. */
+"CF" = "Central African Republic";
+
+/* No comment provided by engineer. */
+"TD" = "Chad";
+
+/* No comment provided by engineer. */
+"CL" = "Chile";
+
+/* No comment provided by engineer. */
+"CN" = "China";
+
+/* No comment provided by engineer. */
+"CO" = "Colombia";
+
+/* No comment provided by engineer. */
+"KM" = "Comoros";
+
+/* No comment provided by engineer. */
+"CG" = "Republic of the Congo";
+
+/* No comment provided by engineer. */
+"CD" = "Democratic Republic of the Congo";
+
+/* No comment provided by engineer. */
+"CR" = "Costa Rica";
+
+/* No comment provided by engineer. */
+"HR" = "Croatia";
+
+/* No comment provided by engineer. */
+"CU" = "Cuba";
+
+/* No comment provided by engineer. */
+"CY" = "Cyprus";
+
+/* No comment provided by engineer. */
+"CZ" = "Czech Republic";
+
+/* No comment provided by engineer. */
+"CI" = "Ivory Coast";
+
+/* No comment provided by engineer. */
+"DK" = "Denmark";
+
+/* No comment provided by engineer. */
+"DJ" = "Djibouti";
+
+/* No comment provided by engineer. */
+"DM" = "Dominica";
+
+/* No comment provided by engineer. */
+"DO" = "Dominican Republic";
+
+/* No comment provided by engineer. */
+"EC" = "Ecuador";
+
+/* No comment provided by engineer. */
+"EG" = "Egypt";
+
+/* No comment provided by engineer. */
+"SV" = "El Salvador";
+
+/* No comment provided by engineer. */
+"GQ" = "Equatorial Guinea";
+
+/* No comment provided by engineer. */
+"ER" = "Eritrea";
+
+/* No comment provided by engineer. */
+"EE" = "Estonia";
+
+/* No comment provided by engineer. */
+"ET" = "Ethiopia";
+
+/* No comment provided by engineer. */
+"FJ" = "Fiji";
+
+/* No comment provided by engineer. */
+"FI" = "Finland";
+
+/* No comment provided by engineer. */
+"FR" = "France";
+
+/* No comment provided by engineer. */
+"GA" = "Gabon";
+
+/* No comment provided by engineer. */
+"GM" = "Gambia";
+
+/* No comment provided by engineer. */
+"GE" = "Georgia";
+
+/* No comment provided by engineer. */
+"DE" = "Germany";
+
+/* No comment provided by engineer. */
+"GH" = "Ghana";
+
+/* No comment provided by engineer. */
+"GR" = "Greece";
+
+/* No comment provided by engineer. */
+"GD" = "Grenada";
+
+/* No comment provided by engineer. */
+"GT" = "Guatemala";
+
+/* No comment provided by engineer. */
+"GN" = "Guinea";
+
+/* No comment provided by engineer. */
+"GW" = "Guinea-Bissau";
+
+/* No comment provided by engineer. */
+"GY" = "Guyana";
+
+/* No comment provided by engineer. */
+"HT" = "Haiti";
+
+/* No comment provided by engineer. */
+"VA" = "Vatican City";
+
+/* No comment provided by engineer. */
+"HN" = "Honduras";
+
+/* No comment provided by engineer. */
+"HU" = "Hungary";
+
+/* No comment provided by engineer. */
+"IS" = "Iceland";
+
+/* No comment provided by engineer. */
+"IN" = "India";
+
+/* No comment provided by engineer. */
+"ID" = "Indonesia";
+
+/* No comment provided by engineer. */
+"IR" = "Iran";
+
+/* No comment provided by engineer. */
+"IQ" = "Iraq";
+
+/* No comment provided by engineer. */
+"IE" = "Ireland";
+
+/* No comment provided by engineer. */
+"IL" = "Israel";
+
+/* No comment provided by engineer. */
+"IT" = "Italy";
+
+/* No comment provided by engineer. */
+"JM" = "Jamaica";
+
+/* No comment provided by engineer. */
+"JP" = "Japan";
+
+/* No comment provided by engineer. */
+"JO" = "Jordan";
+
+/* No comment provided by engineer. */
+"KZ" = "Kazakhstan";
+
+/* No comment provided by engineer. */
+"KE" = "Kenya";
+
+/* No comment provided by engineer. */
+"KR" = "South Korea";
+
+/* No comment provided by engineer. */
+"KW" = "Kuwait";
+
+/* No comment provided by engineer. */
+"KG" = "Kyrgyzstan";
+
+/* No comment provided by engineer. */
+"LA" = "Laos";
+
+/* No comment provided by engineer. */
+"LV" = "Latvia";
+
+/* No comment provided by engineer. */
+"LB" = "Lebanon";
+
+/* No comment provided by engineer. */
+"LS" = "Lesotho";
+
+/* No comment provided by engineer. */
+"LR" = "Liberia";
+
+/* No comment provided by engineer. */
+"LY" = "Libya";
+
+/* No comment provided by engineer. */
+"LI" = "Liechtenstein";
+
+/* No comment provided by engineer. */
+"LT" = "Lithuania";
+
+/* No comment provided by engineer. */
+"LU" = "Luxembourg";
+
+/* No comment provided by engineer. */
+"MK" = "Macedonia";
+
+/* No comment provided by engineer. */
+"MG" = "Madagascar";
+
+/* No comment provided by engineer. */
+"MW" = "Malawi";
+
+/* No comment provided by engineer. */
+"MY" = "Malaysia";
+
+/* No comment provided by engineer. */
+"MV" = "Maldives";
+
+/* No comment provided by engineer. */
+"ML" = "Mali";
+
+/* No comment provided by engineer. */
+"MT" = "Malta";
+
+/* No comment provided by engineer. */
+"MH" = "Marshall Islands";
+
+/* No comment provided by engineer. */
+"MR" = "Mauritania";
+
+/* No comment provided by engineer. */
+"MU" = "Mauritius";
+
+/* No comment provided by engineer. */
+"MX" = "Mexico";
+
+/* No comment provided by engineer. */
+"FM" = "Micronesia";
+
+/* No comment provided by engineer. */
+"MD" = "Moldova";
+
+/* No comment provided by engineer. */
+"MC" = "Monaco";
+
+/* No comment provided by engineer. */
+"MN" = "Mongolia";
+
+/* No comment provided by engineer. */
+"ME" = "Montenegro";
+
+/* No comment provided by engineer. */
+"MA" = "Morocco";
+
+/* No comment provided by engineer. */
+"MZ" = "Mozambique";
+
+/* No comment provided by engineer. */
+"MM" = "Myanmar";
+
+/* No comment provided by engineer. */
+"NA" = "Namibia";
+
+/* No comment provided by engineer. */
+"NP" = "Nepal";
+
+/* No comment provided by engineer. */
+"NL" = "Netherlands";
+
+/* No comment provided by engineer. */
+"NZ" = "New Zealand";
+
+/* No comment provided by engineer. */
+"NI" = "Nicaragua";
+
+/* No comment provided by engineer. */
+"NE" = "Niger";
+
+/* No comment provided by engineer. */
+"NG" = "Nigeria";
+
+/* No comment provided by engineer. */
+"NO" = "Norway";
+
+/* No comment provided by engineer. */
+"OM" = "Oman";
+
+/* No comment provided by engineer. */
+"PK" = "Pakistan";
+
+/* No comment provided by engineer. */
+"PS" = "Palestinian Territory";
+
+/* No comment provided by engineer. */
+"PA" = "Panama";
+
+/* No comment provided by engineer. */
+"PG" = "Papua New Guinea";
+
+/* No comment provided by engineer. */
+"PY" = "Paraguay";
+
+/* No comment provided by engineer. */
+"PE" = "Peru";
+
+/* No comment provided by engineer. */
+"PH" = "Philippines";
+
+/* No comment provided by engineer. */
+"PL" = "Poland";
+
+/* No comment provided by engineer. */
+"PT" = "Portugal";
+
+/* No comment provided by engineer. */
+"QA" = "Qatar";
+
+/* No comment provided by engineer. */
+"XK" = "Kosovo";
+
+/* No comment provided by engineer. */
+"RO" = "Romania";
+
+/* No comment provided by engineer. */
+"RU" = "Russia";
+
+/* No comment provided by engineer. */
+"RW" = "Rwanda";
+
+/* No comment provided by engineer. */
+"KN" = "Saint Kitts and Nevis";
+
+/* No comment provided by engineer. */
+"LC" = "Saint Lucia";
+
+/* No comment provided by engineer. */
+"VC" = "Saint Vincent and the Grenadines";
+
+/* No comment provided by engineer. */
+"WS" = "Samoa";
+
+/* No comment provided by engineer. */
+"SM" = "San Marino";
+
+/* No comment provided by engineer. */
+"ST" = "São Tomé and Príncipe";
+
+/* No comment provided by engineer. */
+"SA" = "Saudi Arabia";
+
+/* No comment provided by engineer. */
+"SN" = "Senegal";
+
+/* No comment provided by engineer. */
+"RS" = "Serbia";
+
+/* No comment provided by engineer. */
+"SC" = "Seychelles";
+
+/* No comment provided by engineer. */
+"SL" = "Sierra Leone";
+
+/* No comment provided by engineer. */
+"SG" = "Singapore";
+
+/* No comment provided by engineer. */
+"SK" = "Slovakia";
+
+/* No comment provided by engineer. */
+"SI" = "Slovenia";
+
+/* No comment provided by engineer. */
+"SB" = "Solomon Islands";
+
+/* No comment provided by engineer. */
+"SO" = "Somalia";
+
+/* No comment provided by engineer. */
+"ZA" = "South Africa";
+
+/* No comment provided by engineer. */
+"SS" = "South Sudan";
+
+/* No comment provided by engineer. */
+"ES" = "Spain";
+
+/* No comment provided by engineer. */
+"LK" = "Sri Lanka";
+
+/* No comment provided by engineer. */
+"SD" = "Sudan";
+
+/* No comment provided by engineer. */
+"SR" = "Suriname";
+
+/* No comment provided by engineer. */
+"SZ" = "Swaziland";
+
+/* No comment provided by engineer. */
+"SE" = "Sweden";
+
+/* No comment provided by engineer. */
+"CH" = "Switzerland";
+
+/* No comment provided by engineer. */
+"SY" = "Syria";
+
+/* No comment provided by engineer. */
+"TW" = "Taiwan";
+
+/* No comment provided by engineer. */
+"TJ" = "Tajikistan";
+
+/* No comment provided by engineer. */
+"TZ" = "Tanzania";
+
+/* No comment provided by engineer. */
+"TH" = "Thailand";
+
+/* No comment provided by engineer. */
+"TL" = "East Timor";
+
+/* No comment provided by engineer. */
+"TG" = "Togo";
+
+/* No comment provided by engineer. */
+"TT" = "Trinidad and Tobago";
+
+/* No comment provided by engineer. */
+"TN" = "Tunisia";
+
+/* No comment provided by engineer. */
+"TR" = "Turkey";
+
+/* No comment provided by engineer. */
+"UG" = "Uganda";
+
+/* No comment provided by engineer. */
+"UA" = "Ukraine";
+
+/* No comment provided by engineer. */
+"AE" = "United Arab Emirates";
+
+/* No comment provided by engineer. */
+"GB" = "United Kingdom";
+
+/* No comment provided by engineer. */
+"US" = "United States";
+
+/* No comment provided by engineer. */
+"UY" = "Uruguay";
+
+/* No comment provided by engineer. */
+"UZ" = "Uzbekistan";
+
+/* No comment provided by engineer. */
+"VU" = "Vanuatu";
+
+/* No comment provided by engineer. */
+"VE" = "Venezuela";
+
+/* No comment provided by engineer. */
+"VN" = "Vietnam";
+
+/* No comment provided by engineer. */
+"YE" = "Yemen";
+
+/* No comment provided by engineer. */
+"ZM" = "Zambia";
+
+/* No comment provided by engineer. */
+"ZW" = "Zimbabwe";

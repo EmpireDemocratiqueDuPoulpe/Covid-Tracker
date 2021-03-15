@@ -37,9 +37,9 @@ class ShareableStats : NSObject, UIActivityItemSource {
     }
     
     private func buildMessage() -> String {
-        return "Nombre de cas: \(self.stats.getConfirmed()) (+\(self.stats.getNewConfirmed()))\n" +
-            "Nombre de soignés: \(self.stats.getRecovered()) (+\(self.stats.getNewRecovered()))\n" +
-            "Nombre de morts: \(self.stats.getDeaths()) (+\(self.stats.getNewDeaths()))"
+        return "\(NSLocalizedString("Cases", comment: "")): \(self.stats.getConfirmed()) (+\(self.stats.getNewConfirmed()))\n" +
+            "\(NSLocalizedString("Recovered", comment: "")): \(self.stats.getRecovered()) (+\(self.stats.getNewRecovered()))\n" +
+            "\(NSLocalizedString("Deaths", comment: "")): \(self.stats.getDeaths()) (+\(self.stats.getNewDeaths()))"
     }
     
     // MARK: - Share

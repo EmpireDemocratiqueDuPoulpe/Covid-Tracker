@@ -10,12 +10,14 @@ import SwiftUI
 // MARK: - CountryDetails
 struct CountryDetails : View {
     var country: Country
+    var localFile: Bool
     @ObservedObject var wikiApi = WikiAPI()
     @EnvironmentObject var favorites: Favorites
     
-    init(country: Country) {
+    init(country: Country, localFile: Bool) {
         self.country = country
-        self.wikiApi.getPageExtract(pageName: self.country.getName())
+        self.localFile = localFile
+        self.wikiApi.getPageExtract(pageName: self.country.getName(localized: true))
     }
     
     var body: some View {
@@ -26,33 +28,45 @@ struct CountryDetails : View {
                     .padding([.top, .leading, .trailing])
                 
                 CountryStat(
-                    title: "Nombre de cas",
+                    title: NSLocalizedString("Cases", comment: ""),
                     currentValue: self.country.TotalConfirmed,
                     newValueFromToday: self.country.NewConfirmed
                 )
                 
                 CountryStat(
-                    title: "Nombre de soignés",
+                    title: NSLocalizedString("Recovered", comment: ""),
                     currentValue: self.country.TotalRecovered,
                     newValueFromToday: self.country.NewRecovered,
                     newValueColor: Color(UIColor.systemGreen)
                 )
                 
                 CountryStat(
-                    title: "Nombre de morts",
+                    title: NSLocalizedString("Deaths", comment: ""),
                     currentValue: self.country.TotalDeaths,
                     newValueFromToday: self.country.NewDeaths
                 )
                 
-                if let updateDate = country.getUpdateDate() {
-                    HStack {
-                        Text("Dernière mise à jour: \(updateDate)")
-                            .font(.caption)
-                            .foregroundColor(.gray)
-                            .multilineTextAlignment(.trailing)
-                            .padding(.leading, 30.0)
-                        
-                        Spacer()
+                VStack {
+                    if let updateDate = country.getUpdateDate() {
+                        HStack {
+                            Spacer()
+                            Text(String(format: NSLocalizedString("Last update: %@", comment: ""), updateDate))
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                                .multilineTextAlignment(.trailing)
+                                .padding(.trailing)
+                        }
+                    }
+                    
+                    if localFile {
+                        HStack {
+                            Spacer()
+                            Text(NSLocalizedString("Using local data", comment: ""))
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                                .multilineTextAlignment(.trailing)
+                                .padding(.trailing)
+                        }
                     }
                 }
                 
@@ -80,7 +94,7 @@ struct CountryDetails : View {
                     HStack(alignment: .center, spacing: 5.0) {
                         Button(action: {
                             ShareableStats(
-                                subject: "Statistiques du COVID en \(self.country.getName())",
+                                subject: String(format: NSLocalizedString("COVID stats in %@", comment: ""), self.country.getName()),
                                 stats: self.country
                             ).share()
                         }) {
@@ -124,12 +138,12 @@ struct CountryStat : View {
                     .padding(.bottom, 1.0)
                 
                 // Total value
-                Text("Total: \(self.currentValue ?? 0)")
+                Text(String(format: NSLocalizedString("Total: %@", comment: ""), String(self.currentValue ?? 0)))
                     .padding(.leading)
                 
                 // Today value
                 HStack {
-                    Text("Depuis aujourd'hui: ")
+                    Text(NSLocalizedString("Since today: ", comment: ""))
                     
                     Text("\(self.newValueFromToday ?? 0)").foregroundColor(self.newValueColor)
                     
@@ -164,7 +178,8 @@ struct CountryDetails_Previews: PreviewProvider {
                 NewRecovered:1,
                 TotalRecovered:12,
                 Date: "01/01/01"
-            )
+            ),
+            localFile: false
         ).environmentObject(Favorites())
     }
 }

@@ -30,24 +30,24 @@ struct CountriesList: View {
                 if self.countries != nil && (self.countries?.count ?? 0) > 0 {
                     
                     ForEach(api.groupNames, id: \.self) { groupName in
-                        if let countriesOfGroup = self.countries![groupName]?.filter({ self.search.isEmpty ? true : $0.getNameAndCode().lowercased().contains(self.search.lowercased()) }), countriesOfGroup.count > 0 {
+                        if let countriesOfGroup = self.countries![groupName]?.filter({ self.search.isEmpty ? true : $0.getNameAndCode(localized: true).lowercased().contains(self.search.lowercased()) }), countriesOfGroup.count > 0 {
                             Section(header: Text(groupName)) {
                                 ForEach(countriesOfGroup) { country in
-                                    CountryRow(country: country)
+                                    CountryRow(country: country, localFile: self.api.usingLocalFile)
                                 }
                             }
                         }
                     }.onAppear() { self.isRefreshing = false }
                 } else {
                     if !self.api.querySuccess {
-                        Text("Erreur pendant la récupération des données.")
+                        Text(NSLocalizedString("An error occured while fetching data.", comment: ""))
                             .font(.subheadline)
                             .onAppear() { self.isRefreshing = false }
                     } else if self.isRefreshing {
-                        Text("Chargement...")
+                        Text(NSLocalizedString("Loading...", comment: ""))
                             .font(.subheadline)
                     } else {
-                        Text("Aucun pays trouvé.")
+                        Text(NSLocalizedString("No country found.", comment: ""))
                             .font(.subheadline)
                     }
                 }
@@ -59,7 +59,7 @@ struct CountriesList: View {
         }
         .toolbar {
             ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
-                Text("Pays")
+                Text(NSLocalizedString("Country", comment: ""))
                     .font(.largeTitle)
                     .fontWeight(.bold)
             }
@@ -76,16 +76,17 @@ struct CountriesList: View {
 // MARK: - CountryRow
 struct CountryRow: View {
     var country: Country
+    var localFile: Bool
     @EnvironmentObject var favorites: Favorites
     
     var body: some View {
-        NavigationLink(destination: CountryDetails(country: country)) {
+        NavigationLink(destination: CountryDetails(country: country, localFile: localFile)) {
             HStack {
                 if let flag = country.getFlagImg() {
                     Image(uiImage: flag)
                 }
                 
-                Text(country.getNameAndCode())
+                Text(country.getNameAndCode(localized: true))
                 
                 if self.favorites.contains(self.country) {
                     Spacer()
@@ -115,7 +116,8 @@ struct CountriesList_Previews: PreviewProvider {
                 NewRecovered:1,
                 TotalRecovered:12,
                 Date: "01/01/01"
-            )
+            ),
+            localFile: false
         ).environmentObject(Favorites())
     }
 }

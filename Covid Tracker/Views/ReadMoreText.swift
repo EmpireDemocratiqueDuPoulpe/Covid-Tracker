@@ -20,7 +20,7 @@ struct ReadMoreText : View {
     }
     
     private var readMoreText: String {
-        return !self.shrinked ? "" : (self.expanded ? "Voir moins" : "Voir plus")
+        return !self.shrinked ? "" : NSLocalizedString((self.expanded ? "Read less" : "Read more"), comment: "")
     }
     
     var body: some View {

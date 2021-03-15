@@ -64,7 +64,7 @@ struct GlobalStats : Codable, CovidStats {
     
     internal func ConvertDate() -> String {
         let inputDateFormat = DateFormatter()
-        inputDateFormat.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        inputDateFormat.dateFormat = "yyyy-MM-dd'T'hh:mm:ss.SSS'Z'"
         
         let outputDateFormat = DateFormatter()
         outputDateFormat.dateFormat = "dd/MM/yyyy - HH:mm:ss"
@@ -99,10 +99,14 @@ struct Country : Codable, Identifiable, CovidStats {
     
     // Getters
     func getId() -> String              { return self.ID ?? "" }
-    func getName() -> String            { return self.Country ?? "" }
+    func getName(localized: Bool = false) -> String {
+        return (localized ? NSLocalizedString(self.getCode().uppercased(), comment: "") : (self.Country ?? ""))
+    }
     func getCode() -> String            { return self.CountryCode ?? "" }
     func getFormattedCode() -> String   { return (self.CountryCode != nil ? "(\(self.CountryCode!))" : "") }
-    func getNameAndCode() -> String     { return "\(self.getName()) \(self.getFormattedCode())"}
+    func getNameAndCode(localized: Bool = false) -> String {
+        return "\(self.getName(localized: localized)) \(self.getFormattedCode())"
+    }
     func getSlug() -> String            { return self.Slug ?? "" }
     func getNewConfirmed() -> Int       { return self.NewConfirmed ?? 0 }
     func getConfirmed() -> Int          { return self.TotalConfirmed ?? 0 }

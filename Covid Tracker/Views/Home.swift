@@ -14,39 +14,52 @@ struct Home : View {
     var body: some View {
         VStack(alignment: .center) {
             StatBlock(
-                title: "Nombre de cas",
+                title: NSLocalizedString("Cases", comment: ""),
                 currentValue: api.apiResponse?.Global.getConfirmed(),
                 newValueFromToday: api.apiResponse?.Global.getNewConfirmed()
             )
                 
             StatBlock(
-                title: "Nombre de soignés",
+                title: NSLocalizedString("Recovered", comment: ""),
                 currentValue: api.apiResponse?.Global.getRecovered(),
                 newValueFromToday: api.apiResponse?.Global.getNewRecovered(),
                 newValueColor: Color(UIColor.systemGreen)
             )
                 
             StatBlock(
-                title: "Nombre de morts",
+                title: NSLocalizedString("Deaths", comment: ""),
                 currentValue: api.apiResponse?.Global.getDeaths(),
                 newValueFromToday: api.apiResponse?.Global.getNewDeaths()
             )
             
-            if let updateDate = api.apiResponse?.Global.getUpdateDate() {
-                HStack {
-                    Spacer()
-                    
-                    Text("Dernière mise à jour: \(updateDate)")
-                        .font(.caption)
-                        .foregroundColor(.gray)
-                        .multilineTextAlignment(.trailing)
-                        .padding(.trailing)
+            VStack {
+                if let updateDate = api.apiResponse?.Global.getUpdateDate() {
+                    HStack {
+                        Spacer()
+                        Text(String(format: NSLocalizedString("Last update: %@", comment: ""), updateDate))
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                            .multilineTextAlignment(.trailing)
+                            .padding(.trailing)
+                    }
+                }
+                
+                if api.usingLocalFile {
+                    HStack {
+                        Spacer()
+                        Text(NSLocalizedString("Using local data", comment: ""))
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                            .multilineTextAlignment(.trailing)
+                            .padding(.trailing)
+                    }
                 }
             }
             
+            
             Spacer()
         }
-        .navigationTitle("Accueil")
+        .navigationTitle(NSLocalizedString("Home", comment: ""))
     }
 }
 
@@ -98,6 +111,6 @@ struct Home_Previews: PreviewProvider {
         Home()
             .environmentObject(CovidApi())
         
-        StatBlock(title: "Nombre de cas", currentValue: 46587, newValueFromToday: 4123)
+        StatBlock(title: NSLocalizedString("Cases", comment: ""), currentValue: 46587, newValueFromToday: 4123)
     }
 }

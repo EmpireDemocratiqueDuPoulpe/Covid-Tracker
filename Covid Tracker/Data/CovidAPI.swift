@@ -12,6 +12,7 @@ class CovidApi : ObservableObject {
     let apiSummaryPage = "/summary"
     
     @Published var querySuccess: Bool = true
+    @Published var usingLocalFile: Bool = false
     @Published var apiResponse: CovidResponse?
     let groupNames: [String] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     
@@ -42,18 +43,35 @@ class CovidApi : ObservableObject {
                     
                     DispatchQueue.main.async {
                         self.querySuccess = true
+                        self.usingLocalFile = false
                         self.apiResponse = decodedJSON
                         self.getOrderedCountries()
                     }
                 } catch {
-                    DispatchQueue.main.async {
-                        self.querySuccess = false
-                    }
-                    
                     self.showError(error)
+                    self.getSummaryLocal()
                 }
             }
         }.resume()
+    }
+    
+    func getSummaryLocal() {
+        if let path = Bundle.main.path(forResource: "last_data", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let decodedJSON = try JSONDecoder().decode(CovidResponse.self, from: data)
+                
+                DispatchQueue.main.async {
+                    self.querySuccess = true
+                    self.usingLocalFile = true
+                    self.apiResponse = decodedJSON
+                    self.getOrderedCountries()
+                }
+            } catch {
+                self.querySuccess = false
+                self.showError(error)
+            }
+        }
     }
     
     // MARK: - Others functions
