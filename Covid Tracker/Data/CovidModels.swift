@@ -64,7 +64,7 @@ struct GlobalStats : Codable, CovidStats {
     
     internal func ConvertDate() -> String {
         let inputDateFormat = DateFormatter()
-        inputDateFormat.dateFormat = "yyyy-MM-dd'T'hh:mm:ss.SSS'Z'"
+        inputDateFormat.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         
         let outputDateFormat = DateFormatter()
         outputDateFormat.dateFormat = "dd/MM/yyyy - HH:mm:ss"

@@ -34,7 +34,7 @@ struct Home : View {
                 )
                 
                 VStack {
-                    if let updateDate = api.apiResponse?.Global.getUpdateDate() {
+                    if api.apiResponse != nil, let updateDate = api.apiResponse?.Global.getUpdateDate() {
                         HStack {
                             Spacer()
                             Text(String(format: NSLocalizedString("Last update: %@", comment: ""), updateDate))
@@ -56,7 +56,6 @@ struct Home : View {
                         }
                     }
                 }
-                
                 
                 Spacer()
             }
