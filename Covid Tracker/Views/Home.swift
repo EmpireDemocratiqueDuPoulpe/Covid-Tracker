@@ -12,54 +12,55 @@ struct Home : View {
     @EnvironmentObject var api: CovidApi
     
     var body: some View {
-        VStack(alignment: .center) {
-            StatBlock(
-                title: NSLocalizedString("Cases", comment: ""),
-                currentValue: api.apiResponse?.Global.getConfirmed(),
-                newValueFromToday: api.apiResponse?.Global.getNewConfirmed()
-            )
+        ScrollView {
+            VStack(alignment: .center) {
+                StatBlock(
+                    title: NSLocalizedString("Cases", comment: ""),
+                    currentValue: api.apiResponse?.Global.getConfirmed(),
+                    newValueFromToday: api.apiResponse?.Global.getNewConfirmed()
+                )
+                    
+                StatBlock(
+                    title: NSLocalizedString("Recovered", comment: ""),
+                    currentValue: api.apiResponse?.Global.getRecovered(),
+                    newValueFromToday: api.apiResponse?.Global.getNewRecovered(),
+                    newValueColor: Color(UIColor.systemGreen)
+                )
+                    
+                StatBlock(
+                    title: NSLocalizedString("Deaths", comment: ""),
+                    currentValue: api.apiResponse?.Global.getDeaths(),
+                    newValueFromToday: api.apiResponse?.Global.getNewDeaths()
+                )
                 
-            StatBlock(
-                title: NSLocalizedString("Recovered", comment: ""),
-                currentValue: api.apiResponse?.Global.getRecovered(),
-                newValueFromToday: api.apiResponse?.Global.getNewRecovered(),
-                newValueColor: Color(UIColor.systemGreen)
-            )
-                
-            StatBlock(
-                title: NSLocalizedString("Deaths", comment: ""),
-                currentValue: api.apiResponse?.Global.getDeaths(),
-                newValueFromToday: api.apiResponse?.Global.getNewDeaths()
-            )
-            
-            VStack {
-                if let updateDate = api.apiResponse?.Global.getUpdateDate() {
-                    HStack {
-                        Spacer()
-                        Text(String(format: NSLocalizedString("Last update: %@", comment: ""), updateDate))
-                            .font(.caption)
-                            .foregroundColor(.gray)
-                            .multilineTextAlignment(.trailing)
-                            .padding(.trailing)
+                VStack {
+                    if let updateDate = api.apiResponse?.Global.getUpdateDate() {
+                        HStack {
+                            Spacer()
+                            Text(String(format: NSLocalizedString("Last update: %@", comment: ""), updateDate))
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                                .multilineTextAlignment(.trailing)
+                                .padding(.trailing)
+                        }
+                    }
+                    
+                    if api.usingLocalFile {
+                        HStack {
+                            Spacer()
+                            Text(NSLocalizedString("Using local data", comment: ""))
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                                .multilineTextAlignment(.trailing)
+                                .padding(.trailing)
+                        }
                     }
                 }
                 
-                if api.usingLocalFile {
-                    HStack {
-                        Spacer()
-                        Text(NSLocalizedString("Using local data", comment: ""))
-                            .font(.caption)
-                            .foregroundColor(.gray)
-                            .multilineTextAlignment(.trailing)
-                            .padding(.trailing)
-                    }
-                }
+                
+                Spacer()
             }
-            
-            
-            Spacer()
-        }
-        .navigationTitle(NSLocalizedString("Home", comment: ""))
+        }.navigationTitle(NSLocalizedString("Home", comment: ""))
     }
 }
 
